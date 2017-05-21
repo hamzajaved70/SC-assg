@@ -15,7 +15,7 @@ class Ability
         can :read, :all
       end
     else
-      can :read, :all
+      can :read, Product
     end
   end
 end

@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Sales</h1>
-
+<h1>Orders</h1>
+<% if can? :read, Sale %> 
 <table class="table table-striped">
   <thead>
     <tr>
@@ -11,6 +11,7 @@
     </tr>
   </thead>
 
+  
   <tbody>
     <% @sales.each do |sale| %>
     <tr>
@@ -34,7 +35,12 @@
     <% end %>
   </tbody>
 </table>
+<% end %>
 
 <br>
 
-<%= link_to 'New Sale', new_sale_path %>
+<%= link_to 'Place New Order', new_sale_path, class: "btn btn-primary" %>
+
+<br><br>
+<%= link_to 'View Sales Reports', sale_report_path(@sales), class: "btn btn-primary" %>
+

@@ -13,9 +13,16 @@ class SalesController < ApplicationController
   def show
     @sales = Sale.all
   end
+
+  def report
+    @report = Sale.all
+  end
+
   # GET /sales/new
   def new
     @sale = Sale.new
+    #@sale_count = 0
+    ####################
   end
   # GET /sales/1/edit
   def edit
@@ -35,8 +42,9 @@ class SalesController < ApplicationController
   # POST /sales.json
   def create
     @sale = Sale.new(sale_params)
-    @sale.user_id = current_user.id #tambahkan ini setelah code di atas
-    @sale.total = @sale.total_all #tambahkan ini setelah code di atas
+    #####################@sale_count++
+    @sale.user_id = current_user.id 
+    @sale.total = @sale.total_all 
     respond_to do |format|
       if @sale.save
         format.html { redirect_to @sale, notice: 'Sale was successfully created.' }

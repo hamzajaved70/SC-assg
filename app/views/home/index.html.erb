@@ -1,5 +1,14 @@
 <h1>Point Of Sale</h1>
+<div class="container">
+	<div class="one">
+	<% if can? :approve, Sale and can? :disapprove, Sale %>
+		<%= link_to image_tag("sales.png", style:"width: 30%; height:30%; float: left;"), sales_path%>
+	<% else %>
+		<%= link_to image_tag("order.jpg", style:"width: 30%; height:30%; float: left;"), sales_path%>
+	<% end %>
+	</div>
+	<div class="one">
+		<%= link_to image_tag("menu.jpg", style:"width: 70%; height:50%;"), products_path%>
+	</div>
+</div> 
 
-<%= link_to "Sales Page", sales_path %>
-<br>
-<%= link_to "Products Page", products_path %>

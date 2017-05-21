@@ -9,17 +9,25 @@
     </ul>
    </div>
   <% end %>
-  <div class="field">
-   <%= f.label :name %><br>
-   <%= f.text_field :name %>
+
+
+  <div class="form-group">
+   <%= f.label "Enter the name you would to place this order under:" , class: "col-sm-6 control-label"%><br>
+   <%= f.text_field :name, class: "form-control" %>
   </div>
   <%= f.fields_for :items do |builder| %>
     <%= render 'item_fields', f: builder %>
   <% end %>
   <%= link_to_add_fields "Add Item", f, :items %>
-  <div class="actions">
-   <%= f.submit %>
-  </div>
+  <br>
+  <br>
+  <%= "#{@sale_count}" %>
+  <%# if @sale_count >= 1 %>
+      <div class="form-group">
+        <%= f.submit "Order", class: "btn btn-lg" %>
+      </div>
+  <%#end%>
+  
  <% end %>
   
  <script type="text/javascript">

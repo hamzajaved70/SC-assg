@@ -1,0 +1,7 @@
+<h1>Sales Report</h1>
+
+<%= @report.each do |r| %>
+	<%= r.price %>
+<% end %>
+
+<%= bar_chart @report.group(:name).count %>

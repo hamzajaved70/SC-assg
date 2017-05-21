@@ -1,8 +1,10 @@
 <fieldset>
+  <%# index = item_counter + 1 %>
   <%= f.label :product, "Product" %>
   <%= f.collection_select :product_id, Product.all, :id, :name %>
   <%= f.label :quantity, "Quantity" %>
   <%= f.text_field :quantity, class: 'padli' %>
   <%= f.hidden_field :_destroy %>
   <%= link_to "remove", '#', class: "remove_fields" %>
+  <%# index++ %>
  </fieldset>

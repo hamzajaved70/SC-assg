@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :sales do
     put 'approve' => 'sales#approve', on: :member, as: :approve
     put 'disapprove' => 'sales#disapprove', on: :member, as: :disapprove
+    get 'report' => 'sales#report'
   end
   resources :products
   devise_for :users
