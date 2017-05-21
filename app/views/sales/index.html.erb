@@ -42,5 +42,7 @@
 <%= link_to 'Place New Order', new_sale_path, class: "btn btn-primary" %>
 
 <br><br>
-<%= link_to 'View Sales Reports', sale_report_path(@sales), class: "btn btn-primary" %>
 
+<% if can? :manage, Product %> 
+<%= link_to 'View Sales Reports', sale_report_path(@sales), class: "btn btn-primary" %>
+<% end %>
