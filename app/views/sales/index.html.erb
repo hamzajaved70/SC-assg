@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Orders</h1>
-<% if can? :read, Sale %> 
+<% if can? :manage, Sale %> 
 <table class="table table-striped">
   <thead>
     <tr>
